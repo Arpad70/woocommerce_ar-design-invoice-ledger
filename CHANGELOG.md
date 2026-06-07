@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3
+- Added robust admin menu parent fallback so the Invoice ledger page appears under PDF Invoices when available, or under WooCommerce otherwise.
+
 ## 1.0.2
 - Added WooCommerce HPOS compatibility declaration (`custom_order_tables`) to remove incompatible plugin warning in WooCommerce features screen.
 

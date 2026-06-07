@@ -4,7 +4,7 @@ Tags: woocommerce, invoices, export
 Requires at least: 5.8
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ Funkcie:
 3. Otvorte WooCommerce -> PDF Invoices -> Evidenčná kniha faktúr
 
 == Changelog ==
+
+= 1.0.3 =
+* Added robust admin menu parent fallback so the Invoice ledger page appears under PDF Invoices when available, or under WooCommerce otherwise.
 
 = 1.0.2 =
 * Added WooCommerce HPOS compatibility declaration (`custom_order_tables`) to remove incompatible plugin warning in WooCommerce features screen.

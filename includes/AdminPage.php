@@ -22,8 +22,14 @@ final class AdminPage
 
     public static function registerMenu(): void
     {
+        $parentSlug = 'woocommerce';
+
+        if (!empty($GLOBALS['admin_page_hooks']) && is_array($GLOBALS['admin_page_hooks']) && isset($GLOBALS['admin_page_hooks']['wpo_wcpdf_options_page'])) {
+            $parentSlug = 'wpo_wcpdf_options_page';
+        }
+
         add_submenu_page(
-            'wpo_wcpdf_options_page',
+            $parentSlug,
             __('Invoice ledger', 'ar-design-invoice-ledger'),
             __('Invoice ledger', 'ar-design-invoice-ledger'),
             'manage_woocommerce',
