@@ -24,8 +24,8 @@ final class AdminPage
     {
         add_submenu_page(
             'wpo_wcpdf_options_page',
-            __('Evidenčná kniha faktúr', 'ar-design-invoice-ledger'),
-            __('Evidenčná kniha faktúr', 'ar-design-invoice-ledger'),
+            __('Invoice ledger', 'ar-design-invoice-ledger'),
+            __('Invoice ledger', 'ar-design-invoice-ledger'),
             'manage_woocommerce',
             self::PAGE_SLUG,
             array(__CLASS__, 'renderPage')
@@ -35,7 +35,7 @@ final class AdminPage
     public static function renderPage(): void
     {
         if (!current_user_can('manage_woocommerce')) {
-            wp_die(esc_html__('Nemáte oprávnenie pre zobrazenie tejto stránky.', 'ar-design-invoice-ledger'));
+            wp_die(esc_html__('You do not have permission to view this page.', 'ar-design-invoice-ledger'));
         }
 
         $filters = self::readFiltersFromRequest();
@@ -54,18 +54,18 @@ final class AdminPage
 
         ?>
         <div class="wrap">
-            <h1><?php echo esc_html__('Evidenčná kniha faktúr', 'ar-design-invoice-ledger'); ?></h1>
-            <p><?php echo esc_html__('Prehľad vystavených faktúr z WooCommerce PDF Invoices s exportom do ekonomického systému.', 'ar-design-invoice-ledger'); ?></p>
+            <h1><?php echo esc_html__('Invoice ledger', 'ar-design-invoice-ledger'); ?></h1>
+            <p><?php echo esc_html__('Overview of issued WooCommerce PDF invoices with export to accounting software.', 'ar-design-invoice-ledger'); ?></p>
 
             <form method="get" action="">
                 <input type="hidden" name="page" value="<?php echo esc_attr(self::PAGE_SLUG); ?>" />
                 <?php wp_nonce_field(self::NONCE_ACTION); ?>
                 <table class="form-table" role="presentation">
                     <tr>
-                        <th scope="row"><label for="status"><?php echo esc_html__('Stav objednávky', 'ar-design-invoice-ledger'); ?></label></th>
+                        <th scope="row"><label for="status"><?php echo esc_html__('Order status', 'ar-design-invoice-ledger'); ?></label></th>
                         <td>
                             <select id="status" name="status">
-                                <option value=""><?php echo esc_html__('Všetky', 'ar-design-invoice-ledger'); ?></option>
+                                <option value=""><?php echo esc_html__('All', 'ar-design-invoice-ledger'); ?></option>
                                 <?php foreach (wc_get_order_statuses() as $statusKey => $statusLabel) : ?>
                                     <?php $statusSlug = str_replace('wc-', '', (string) $statusKey); ?>
                                     <option value="<?php echo esc_attr($statusSlug); ?>" <?php selected($filters['status'], $statusSlug); ?>><?php echo esc_html($statusLabel); ?></option>
@@ -74,23 +74,23 @@ final class AdminPage
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="date_from"><?php echo esc_html__('Dátum od', 'ar-design-invoice-ledger'); ?></label></th>
+                        <th scope="row"><label for="date_from"><?php echo esc_html__('Date from', 'ar-design-invoice-ledger'); ?></label></th>
                         <td><input type="date" id="date_from" name="date_from" value="<?php echo esc_attr($filters['date_from']); ?>" /></td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="date_to"><?php echo esc_html__('Dátum do', 'ar-design-invoice-ledger'); ?></label></th>
+                        <th scope="row"><label for="date_to"><?php echo esc_html__('Date to', 'ar-design-invoice-ledger'); ?></label></th>
                         <td><input type="date" id="date_to" name="date_to" value="<?php echo esc_attr($filters['date_to']); ?>" /></td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="customer"><?php echo esc_html__('Kupujúci', 'ar-design-invoice-ledger'); ?></label></th>
-                        <td><input type="text" id="customer" name="customer" class="regular-text" value="<?php echo esc_attr($filters['customer']); ?>" placeholder="<?php echo esc_attr__('Meno, firma alebo e-mail', 'ar-design-invoice-ledger'); ?>" /></td>
+                        <th scope="row"><label for="customer"><?php echo esc_html__('Customer', 'ar-design-invoice-ledger'); ?></label></th>
+                        <td><input type="text" id="customer" name="customer" class="regular-text" value="<?php echo esc_attr($filters['customer']); ?>" placeholder="<?php echo esc_attr__('Name, company, or email', 'ar-design-invoice-ledger'); ?>" /></td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="invoice_number"><?php echo esc_html__('Číslo faktúry obsahuje', 'ar-design-invoice-ledger'); ?></label></th>
+                        <th scope="row"><label for="invoice_number"><?php echo esc_html__('Invoice number contains', 'ar-design-invoice-ledger'); ?></label></th>
                         <td><input type="text" id="invoice_number" name="invoice_number" value="<?php echo esc_attr($filters['invoice_number']); ?>" /></td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="export_software"><?php echo esc_html__('Predvolený ekonomický SW', 'ar-design-invoice-ledger'); ?></label></th>
+                        <th scope="row"><label for="export_software"><?php echo esc_html__('Default accounting software', 'ar-design-invoice-ledger'); ?></label></th>
                         <td>
                             <select id="export_software" name="export_software">
                                 <?php foreach ($softwareOptions as $softwareKey => $softwareLabel) : ?>
@@ -101,7 +101,7 @@ final class AdminPage
                     </tr>
                 </table>
                 <p>
-                    <button type="submit" class="button button-primary"><?php echo esc_html__('Filtrovať', 'ar-design-invoice-ledger'); ?></button>
+                    <button type="submit" class="button button-primary"><?php echo esc_html__('Filter', 'ar-design-invoice-ledger'); ?></button>
                 </p>
             </form>
 
@@ -115,25 +115,25 @@ final class AdminPage
                 <input type="hidden" name="invoice_number" value="<?php echo esc_attr($filters['invoice_number']); ?>" />
                 <input type="hidden" name="export_software" value="<?php echo esc_attr($selectedSoftware); ?>" />
                 <p>
-                    <button type="submit" class="button button-secondary"><?php echo esc_html__('Export podľa filtra', 'ar-design-invoice-ledger'); ?></button>
+                    <button type="submit" class="button button-secondary"><?php echo esc_html__('Export by filter', 'ar-design-invoice-ledger'); ?></button>
                 </p>
             </form>
 
             <table class="widefat striped">
                 <thead>
                     <tr>
-                        <th><?php echo esc_html__('Faktúra', 'ar-design-invoice-ledger'); ?></th>
-                        <th><?php echo esc_html__('Objednávka', 'ar-design-invoice-ledger'); ?></th>
-                        <th><?php echo esc_html__('Dátum', 'ar-design-invoice-ledger'); ?></th>
-                        <th><?php echo esc_html__('Kupujúci', 'ar-design-invoice-ledger'); ?></th>
-                        <th><?php echo esc_html__('Suma', 'ar-design-invoice-ledger'); ?></th>
-                        <th><?php echo esc_html__('Mena', 'ar-design-invoice-ledger'); ?></th>
-                        <th><?php echo esc_html__('Stav', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Invoice', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Order', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Date', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Customer', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Total', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Currency', 'ar-design-invoice-ledger'); ?></th>
+                        <th><?php echo esc_html__('Status', 'ar-design-invoice-ledger'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (empty($entries)) : ?>
-                        <tr><td colspan="7"><?php echo esc_html__('Nenašli sa žiadne vystavené faktúry pre zvolený filter.', 'ar-design-invoice-ledger'); ?></td></tr>
+                        <tr><td colspan="7"><?php echo esc_html__('No issued invoices found for the selected filter.', 'ar-design-invoice-ledger'); ?></td></tr>
                     <?php else : ?>
                         <?php foreach ($entries as $entry) : ?>
                             <tr>
@@ -187,10 +187,10 @@ final class AdminPage
     private static function getSoftwareOptions(): array
     {
         return array(
-            'generic_csv' => 'Generic CSV',
-            'pohoda_csv' => 'POHODA (CSV)',
-            'money_s3_csv' => 'Money S3 (CSV)',
-            'oberon_csv' => 'OBERON (CSV)',
+            'generic_csv' => __('Generic CSV', 'ar-design-invoice-ledger'),
+            'pohoda_csv' => __('POHODA (CSV)', 'ar-design-invoice-ledger'),
+            'money_s3_csv' => __('Money S3 (CSV)', 'ar-design-invoice-ledger'),
+            'oberon_csv' => __('OBERON (CSV)', 'ar-design-invoice-ledger'),
         );
     }
 
@@ -315,7 +315,7 @@ final class AdminPage
     public static function handleExport(): void
     {
         if (!current_user_can('manage_woocommerce')) {
-            wp_die(esc_html__('Nemáte oprávnenie na export.', 'ar-design-invoice-ledger'));
+            wp_die(esc_html__('You do not have permission to export.', 'ar-design-invoice-ledger'));
         }
 
         check_admin_referer(self::NONCE_ACTION);
@@ -342,7 +342,19 @@ final class AdminPage
         }
 
         fwrite($output, "\xEF\xBB\xBF");
-        fputcsv($output, array('InvoiceNumber', 'OrderID', 'InvoiceDate', 'Customer', 'Total', 'Currency', 'OrderStatus'), ';');
+        fputcsv(
+            $output,
+            array(
+                __('Invoice number', 'ar-design-invoice-ledger'),
+                __('Order ID', 'ar-design-invoice-ledger'),
+                __('Invoice date', 'ar-design-invoice-ledger'),
+                __('Customer', 'ar-design-invoice-ledger'),
+                __('Total', 'ar-design-invoice-ledger'),
+                __('Currency', 'ar-design-invoice-ledger'),
+                __('Order status', 'ar-design-invoice-ledger'),
+            ),
+            ';'
+        );
 
         foreach ($entries as $entry) {
             fputcsv(

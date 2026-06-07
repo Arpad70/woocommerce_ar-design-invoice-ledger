@@ -2,7 +2,7 @@
 /**
  * Plugin Name: AR Design Invoice Ledger for WooCommerce
  * Description: Evidenčná kniha vystavených WooCommerce faktúr pod menu PDF Invoices s exportom do ekonomického SW podľa filtrov.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Arpád Horák
  * Author URI: https://arpad-horak.cz
  * Update URI: https://github.com/Arpad70/woocommerce_ar-design-invoice-ledger
@@ -27,7 +27,7 @@ $plugin_dir = substr($plugin_dir, 0, strlen($plugin_dir) - 1);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_DIR', $plugin_dir);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_INDEX', __FILE__);
-define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.0');
+define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.1');
 define('AR_DESIGN_INVOICE_LEDGER_BASENAME', plugin_basename(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_REPOSITORY', 'Arpad70/woocommerce_ar-design-invoice-ledger');
 define('AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN', 'ar-design-invoice-ledger');
@@ -59,11 +59,11 @@ function ard_invoice_ledger_dependencies_notice(): void {
 	$messages = array();
 
 	if (!ard_invoice_ledger_is_woocommerce_ready()) {
-		$messages[] = __('Plugin AR Design Invoice Ledger vyžaduje aktívny WooCommerce.', AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN);
+		$messages[] = __('AR Design Invoice Ledger plugin requires active WooCommerce.', AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN);
 	}
 
 	if (!ard_invoice_ledger_is_pdf_invoices_ready()) {
-		$messages[] = __('Plugin AR Design Invoice Ledger vyžaduje aktívny plugin WooCommerce PDF Invoices & Packing Slips.', AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN);
+		$messages[] = __('AR Design Invoice Ledger plugin requires active WooCommerce PDF Invoices & Packing Slips plugin.', AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN);
 	}
 
 	if (empty($messages)) {

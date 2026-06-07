@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AR Design Invoice Ledger 1.0.0\n"
+"POT-Creation-Date: 2026-06-07 17:10+0000\n"
+"PO-Revision-Date: 2026-06-07 17:10+0000\n"
+"Last-Translator: AR Design\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: ar-design-invoice-ledger\n"
+
+msgid "AR Design Invoice Ledger plugin requires active WooCommerce."
+msgstr "AR Design Invoice Ledger plugin requires active WooCommerce."
+
+msgid "AR Design Invoice Ledger plugin requires active WooCommerce PDF Invoices & Packing Slips plugin."
+msgstr "AR Design Invoice Ledger plugin requires active WooCommerce PDF Invoices & Packing Slips plugin."
+
+msgid "Invoice ledger"
+msgstr "Invoice ledger"
+
+msgid "You do not have permission to view this page."
+msgstr "You do not have permission to view this page."
+
+msgid "Overview of issued WooCommerce PDF invoices with export to accounting software."
+msgstr "Overview of issued WooCommerce PDF invoices with export to accounting software."
+
+msgid "Order status"
+msgstr "Order status"
+
+msgid "All"
+msgstr "All"
+
+msgid "Date from"
+msgstr "Date from"
+
+msgid "Date to"
+msgstr "Date to"
+
+msgid "Customer"
+msgstr "Customer"
+
+msgid "Name, company, or email"
+msgstr "Name, company, or email"
+
+msgid "Invoice number contains"
+msgstr "Invoice number contains"
+
+msgid "Default accounting software"
+msgstr "Default accounting software"
+
+msgid "Filter"
+msgstr "Filter"
+
+msgid "Export by filter"
+msgstr "Export by filter"
+
+msgid "Invoice"
+msgstr "Invoice"
+
+msgid "Order"
+msgstr "Order"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "No issued invoices found for the selected filter."
+msgstr "No issued invoices found for the selected filter."
+
+msgid "Generic CSV"
+msgstr "Generic CSV"
+
+msgid "POHODA (CSV)"
+msgstr "POHODA (CSV)"
+
+msgid "Money S3 (CSV)"
+msgstr "Money S3 (CSV)"
+
+msgid "OBERON (CSV)"
+msgstr "OBERON (CSV)"
+
+msgid "You do not have permission to export."
+msgstr "You do not have permission to export."
+
+msgid "Invoice number"
+msgstr "Invoice number"
+
+msgid "Order ID"
+msgstr "Order ID"
+
+msgid "Invoice date"
+msgstr "Invoice date"
+
+msgid "Invoice ledger of issued invoices for WooCommerce PDF Invoices."
+msgstr "Invoice ledger of issued invoices for WooCommerce PDF Invoices."
+
+msgid "Changelog is not available."
+msgstr "Changelog is not available."

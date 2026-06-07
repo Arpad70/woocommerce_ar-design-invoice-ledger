@@ -89,8 +89,8 @@ final class ArDesignInvoiceLedgerUpdater
             'homepage' => $details,
             'download_link' => (string) ($release['package_url'] ?? ''),
             'sections' => array(
-                'description' => __('Evidenčná kniha vystavených faktúr pre WooCommerce PDF Invoices.', 'ar-design-invoice-ledger'),
-                'changelog' => '' !== $body ? wp_kses_post(nl2br(esc_html($body))) : __('Changelog nie je dostupný.', 'ar-design-invoice-ledger'),
+                'description' => __('Invoice ledger of issued invoices for WooCommerce PDF Invoices.', 'ar-design-invoice-ledger'),
+                'changelog' => '' !== $body ? wp_kses_post(nl2br(esc_html($body))) : __('Changelog is not available.', 'ar-design-invoice-ledger'),
             ),
         );
     }

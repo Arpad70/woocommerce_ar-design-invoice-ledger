@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AR Design Invoice Ledger 1.0.0\n"
+"POT-Creation-Date: 2026-06-07 17:10+0000\n"
+"PO-Revision-Date: 2026-06-07 17:10+0000\n"
+"Last-Translator: AR Design\n"
+"Language-Team: Slovak\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Domain: ar-design-invoice-ledger\n"
+
+msgid "AR Design Invoice Ledger plugin requires active WooCommerce."
+msgstr "Plugin AR Design Invoice Ledger vyžaduje aktívny WooCommerce."
+
+msgid "AR Design Invoice Ledger plugin requires active WooCommerce PDF Invoices & Packing Slips plugin."
+msgstr "Plugin AR Design Invoice Ledger vyžaduje aktívny plugin WooCommerce PDF Invoices & Packing Slips."
+
+msgid "Invoice ledger"
+msgstr "Evidenčná kniha faktúr"
+
+msgid "You do not have permission to view this page."
+msgstr "Nemáte oprávnenie pre zobrazenie tejto stránky."
+
+msgid "Overview of issued WooCommerce PDF invoices with export to accounting software."
+msgstr "Prehľad vystavených WooCommerce PDF faktúr s exportom do ekonomického softvéru."
+
+msgid "Order status"
+msgstr "Stav objednávky"
+
+msgid "All"
+msgstr "Všetky"
+
+msgid "Date from"
+msgstr "Dátum od"
+
+msgid "Date to"
+msgstr "Dátum do"
+
+msgid "Customer"
+msgstr "Kupujúci"
+
+msgid "Name, company, or email"
+msgstr "Meno, firma alebo e-mail"
+
+msgid "Invoice number contains"
+msgstr "Číslo faktúry obsahuje"
+
+msgid "Default accounting software"
+msgstr "Predvolený ekonomický SW"
+
+msgid "Filter"
+msgstr "Filtrovať"
+
+msgid "Export by filter"
+msgstr "Export podľa filtra"
+
+msgid "Invoice"
+msgstr "Faktúra"
+
+msgid "Order"
+msgstr "Objednávka"
+
+msgid "Date"
+msgstr "Dátum"
+
+msgid "Total"
+msgstr "Suma"
+
+msgid "Currency"
+msgstr "Mena"
+
+msgid "Status"
+msgstr "Stav"
+
+msgid "No issued invoices found for the selected filter."
+msgstr "Nenašli sa žiadne vystavené faktúry pre zvolený filter."
+
+msgid "Generic CSV"
+msgstr "Generic CSV"
+
+msgid "POHODA (CSV)"
+msgstr "POHODA (CSV)"
+
+msgid "Money S3 (CSV)"
+msgstr "Money S3 (CSV)"
+
+msgid "OBERON (CSV)"
+msgstr "OBERON (CSV)"
+
+msgid "You do not have permission to export."
+msgstr "Nemáte oprávnenie na export."
+
+msgid "Invoice number"
+msgstr "Číslo faktúry"
+
+msgid "Order ID"
+msgstr "ID objednávky"
+
+msgid "Invoice date"
+msgstr "Dátum faktúry"
+
+msgid "Invoice ledger of issued invoices for WooCommerce PDF Invoices."
+msgstr "Evidenčná kniha vystavených faktúr pre WooCommerce PDF Invoices."
+
+msgid "Changelog is not available."
+msgstr "Changelog nie je dostupný."
