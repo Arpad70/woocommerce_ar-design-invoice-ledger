@@ -2,7 +2,7 @@
 /**
  * Plugin Name: AR Design Invoice Ledger for WooCommerce
  * Description: Evidenčná kniha vystavených WooCommerce faktúr pod menu PDF Invoices s exportom do ekonomického SW podľa filtrov.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Arpád Horák
  * Author URI: https://arpad-horak.cz
  * Update URI: https://github.com/Arpad70/woocommerce_ar-design-invoice-ledger
@@ -27,7 +27,7 @@ $plugin_dir = substr($plugin_dir, 0, strlen($plugin_dir) - 1);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_DIR', $plugin_dir);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_INDEX', __FILE__);
-define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.1');
+define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.2');
 define('AR_DESIGN_INVOICE_LEDGER_BASENAME', plugin_basename(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_REPOSITORY', 'Arpad70/woocommerce_ar-design-invoice-ledger');
 define('AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN', 'ar-design-invoice-ledger');
@@ -90,6 +90,14 @@ function ard_invoice_ledger_bootstrap(): void {
 }
 
 add_action('plugins_loaded', __NAMESPACE__ . '\\ard_invoice_ledger_bootstrap', 20);
+
+add_action('before_woocommerce_init', static function (): void {
+	if (!class_exists(\Automattic\WooCommerce\Utilities\FeaturesUtil::class)) {
+		return;
+	}
+
+	\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+});
 
 $ard_invoice_ledger_repository = apply_filters(
 	'ard_invoice_ledger_repository',
