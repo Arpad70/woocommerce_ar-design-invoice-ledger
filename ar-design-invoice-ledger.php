@@ -2,7 +2,7 @@
 /**
  * Plugin Name: AR Design Invoice Ledger for WooCommerce
  * Description: Evidenčná kniha vystavených WooCommerce faktúr pod menu PDF Invoices s exportom do ekonomického SW podľa filtrov.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Arpád Horák
  * Author URI: https://arpad-horak.cz
  * Update URI: https://github.com/Arpad70/woocommerce_ar-design-invoice-ledger
@@ -27,12 +27,13 @@ $plugin_dir = substr($plugin_dir, 0, strlen($plugin_dir) - 1);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_DIR', $plugin_dir);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_INDEX', __FILE__);
-define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.3');
+define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.4');
 define('AR_DESIGN_INVOICE_LEDGER_BASENAME', plugin_basename(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_REPOSITORY', 'Arpad70/woocommerce_ar-design-invoice-ledger');
 define('AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN', 'ar-design-invoice-ledger');
 
 require_once AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH . 'includes' . DIRECTORY_SEPARATOR . 'Updater.php';
+require_once AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH . 'includes' . DIRECTORY_SEPARATOR . 'RollbackManager.php';
 require_once AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH . 'includes' . DIRECTORY_SEPARATOR . 'AdminPage.php';
 
 function ard_invoice_ledger_is_woocommerce_ready(): bool {
@@ -114,6 +115,18 @@ if (class_exists($updater_class)) {
 
 	if (is_object($ard_invoice_ledger_updater) && is_callable(array($ard_invoice_ledger_updater, 'register'))) {
 		$ard_invoice_ledger_updater->register();
+	}
+}
+
+$rollback_class = __NAMESPACE__ . '\\ArDesignInvoiceLedgerRollbackManager';
+if (class_exists($rollback_class)) {
+	$ard_invoice_ledger_rollback = new $rollback_class(
+		AR_DESIGN_INVOICE_LEDGER_BASENAME,
+		AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH
+	);
+
+	if (is_object($ard_invoice_ledger_rollback) && is_callable(array($ard_invoice_ledger_rollback, 'register'))) {
+		$ard_invoice_ledger_rollback->register();
 	}
 }
 
