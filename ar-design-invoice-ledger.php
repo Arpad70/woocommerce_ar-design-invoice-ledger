@@ -2,10 +2,11 @@
 /**
  * Plugin Name: AR Design Invoice Ledger for WooCommerce
  * Description: Evidenčná kniha vystavených WooCommerce faktúr pod menu PDF Invoices s exportom do ekonomického SW podľa filtrov.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Arpád Horák
  * Author URI: https://arpad-horak.cz
  * Update URI: https://github.com/Arpad70/woocommerce_ar-design-invoice-ledger
+ * Requires Plugins: ar-design-shared-support
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: ar-design-invoice-ledger
@@ -27,7 +28,7 @@ $plugin_dir = substr($plugin_dir, 0, strlen($plugin_dir) - 1);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_DIR', $plugin_dir);
 define('AR_DESIGN_INVOICE_LEDGER_PLUGIN_INDEX', __FILE__);
-define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.4');
+define('AR_DESIGN_INVOICE_LEDGER_VERSION', '1.0.5');
 define('AR_DESIGN_INVOICE_LEDGER_BASENAME', plugin_basename(__FILE__));
 define('AR_DESIGN_INVOICE_LEDGER_REPOSITORY', 'Arpad70/woocommerce_ar-design-invoice-ledger');
 define('AR_DESIGN_INVOICE_LEDGER_TEXT_DOMAIN', 'ar-design-invoice-ledger');
